@@ -49,7 +49,7 @@ self.addEventListener('fetch', evento => {
 
             return fetch(evento.request)
                 .then(resWeb => {
-                    if (evento.request.url.includes('/images/luisr.png')) {
+                    if (evento.request.url.includes('images/luisr.png')) {
                         // Si la solicitud es para la imagen "luisr.png" (ósea la imagen que elegí) y no está en caché,
                         // se devuelve la imagen de reemplazo ("/images/no-img.jpg").
                         return caches.open(CACHE_DINAMICO)
@@ -75,9 +75,9 @@ self.addEventListener('fetch', evento => {
                 .catch(error => {
                     console.error('Error al obtener la respuesta de la red:', error);
                     if (evento.request.headers.get('accept').includes('text/html')) {
-                        return caches.match('/offline.html');
+                        return caches.match('offline.html');
                     } else if (evento.request.headers.get('accept').includes('image')) {
-                        return caches.match('/images/no-img.png');
+                        return caches.match('images/no-img.png');
                     }
                 });
         });
