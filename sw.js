@@ -6,16 +6,16 @@ self.addEventListener('install', evento => {
     const promesa = caches.open(CACHE)
         .then(cache => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/css/styles.css',
-                '/css/icons.css',
-                '/css/londinium-theme.css',
-                '/css/googleapi.css',
-                '/js/app.js',
-                '/images/no-img.png',
-                '/images/luisr.png',
-                '/offline.html'
+            //    '/',
+                'index.html',
+                'css/styles.css',
+                'css/icons.css',
+                'css/londinium-theme.css',
+                'css/googleapi.css',
+                'js/app.js',
+                'images/no-img.png',
+                'images/luisr.png',
+                'offline.html'
             ]);
         });
 
